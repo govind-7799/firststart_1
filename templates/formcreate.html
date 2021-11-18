@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block container %}
+<br><br><br>
+    <div class="container">
+        <div>
+            <form method="post">
+                {% csrf_token %}
+                {{name}}
+                <input type="submit" value="Add">
+            </form>
+        </div>
+         <div>
+             {% for i in data %}
+             {{i.question}}{{i.type}}{{i.options}}
+             {% endfor %}
+        </div>
+  </div>
+{% endblock %}
